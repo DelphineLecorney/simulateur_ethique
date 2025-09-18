@@ -1,0 +1,11 @@
+from django.db import models
+
+class Scenario(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    choices = models.JSONField()
+    consequences = models.JSONField()
+    ethical_scores = models.JSONField()
+
+    def __str__(self):
+        return self.title
