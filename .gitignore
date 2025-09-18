@@ -1,0 +1,33 @@
+# Environnement virtuel
+env/
+venv/
+ENV/
+
+# Fichiers Python compilés
+__pycache__/
+*.py[cod]
+*.so
+
+# Fichiers de base de données temporaires
+*.sqlite3
+
+# Fichiers de logs
+*.log
+
+# Fichiers de configuration secrets
+.env
+*.env
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Dossiers Django
+/staticfiles/
+/media/
+node_modules/
+
+# VSCode / IDE
+.vscode/
+.idea/
+*.swp
