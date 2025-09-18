@@ -1,0 +1,44 @@
+{% load custom_filters %}
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Scénarios Éthiques</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="mb-4">🧠 Simulateur de Dilemmes Éthiques</h1>
+
+        {% for scenario in scenarios %}
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ scenario.title }}</h5>
+                    <p class="card-text">{{ scenario.description }}</p>
+
+                    <h6>Choix possibles :</h6>
+                    <ul class="list-group mb-3">
+                        {% for choice in scenario.choices %}
+                            <li class="list-group-item">
+                                <strong>{{ choice }}</strong><br>
+                                {% if scenario.consequences %}
+                                    {{ scenario.consequences|get_item:choice }}
+                                {% endif %}
+                                {% if scenario.ethical_scores %}
+                                    <span class="badge bg-secondary float-end">
+                                        Score éthique : {{ scenario.ethical_scores|get_item:choice }}
+                                    </span>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% empty %}
+            <p>Aucun scénario disponible pour le moment.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
