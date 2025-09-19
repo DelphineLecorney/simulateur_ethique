@@ -6,6 +6,8 @@ class Scenario(models.Model):
     choices = models.JSONField()
     consequences = models.JSONField()
     ethical_scores = models.JSONField()
+    selected_choice = models.CharField(max_length=255, blank=True, null=True)
+
 
     def __str__(self):
         return self.title
