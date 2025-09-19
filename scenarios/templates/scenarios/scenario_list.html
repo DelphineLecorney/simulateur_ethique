@@ -25,7 +25,7 @@
                                 <strong>{{ choice }}</strong><br>
                                 {% if scenario.consequences %}
                                     {{ scenario.consequences|get_item:choice }}
-                                {% endif %}
+                                {% endif %}                               
                                 {% if scenario.ethical_scores %}
                                     <span class="badge bg-secondary float-end">
                                         Score éthique : {{ scenario.ethical_scores|get_item:choice }}
@@ -34,6 +34,7 @@
                             </li>
                         {% endfor %}
                     </ul>
+                    <a href="/{{ scenario.id }}/" class="btn btn-primary mt-3">Explorer ce dilemme</a>
                 </div>
             </div>
         {% empty %}
