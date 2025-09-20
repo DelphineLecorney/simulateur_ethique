@@ -11,3 +11,8 @@ class Scenario(models.Model):
 
     def __str__(self):
         return self.title
+
+class Parcours(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    scenarios = models.ManyToManyField(Scenario)

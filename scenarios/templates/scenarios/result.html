@@ -9,16 +9,34 @@
     />
   </head>
   <body class="bg-secondary text-white">
-
     <div class="container py-5">
       <h1>Tu as choisi : {{ choice }}</h1>
       <p><strong>Conséquence :</strong> {{ consequence }}</p>
       <p><strong>Score éthique :</strong> {{ score }}</p>
-
-      <h4>Visualisation :</h4>
-      <img src="data:image/png;base64,{{ graphic }}" alt="Graphique du score" />
-
       <a href="/" class="btn btn-primary mt-4">← Retour à la liste</a>
+
+      <div class="card mt-4 p-3 text-center">
+        <h4 class="mb-3">Jauge éthique</h4>
+        <img
+          src="data:image/png;base64,{{ graphic }}"
+          alt="Jauge du score"
+          class="d-block mx-auto"
+          style="max-width: 300px; height: auto"
+        />
+      </div>
+      <div class="mt-4">
+        <h5>Légende :</h5>
+        <ul class="list-unstyled">
+          <li>🔴 0–33 : Choix égoïste ou risqué</li>
+          <li>🟠 34–66 : Choix nuancé ou pragmatique</li>
+          <li>🟢 67–100 : Choix altruiste ou responsable</li>
+        </ul>
+      </div>
     </div>
   </body>
+  <nav class="navbar fixed-bottom bg-primary text-white">
+    <div class="container text-center">
+      <span class="navbar-text w-100">© 2025 Simulateur Éthique</span>
+    </div>
+  </nav>
 </html>

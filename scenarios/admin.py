@@ -1,5 +1,12 @@
 from django.contrib import admin
-from .models import Scenario
+from .models import Scenario, Parcours
 
-admin.site.register(Scenario)
+class ScenarioAdmin(admin.ModelAdmin):
+    list_display = ('title',)
 
+class ParcoursAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    filter_horizontal = ('scenarios',)
+
+admin.site.register(Scenario, ScenarioAdmin)
+admin.site.register(Parcours, ParcoursAdmin)
