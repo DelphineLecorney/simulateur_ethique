@@ -4,7 +4,7 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <title>Parcours</title>
+    <title>Simulateur Éthique</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,21 +12,46 @@
   </head>
   <body class="bg-secondary text-white">
     <div class="container py-5">
-      <h1 class="mb-4">🧠 Simulateur de Dilemmes Éthiques</h1>
-      
-      <a href="{% url 'scenario_list' %}" class="btn btn-light me-3"
-        >Explorer les dilemmes</a
-      >
-      <a href="{% url 'parcours_list' %}" class="btn btn-light"
-        >Parcours éthiques</a
-      >
+      <h1 class="mb-4 text-center">🧠 Simulateur de Dilemmes Éthiques</h1>
+
+      <div class="bg-dark text-white py-5 text-center rounded">
+        <h2 class="display-5">Explore ta boussole morale</h2>
+        <p class="lead">Un parcours introspectif pour comprendre ce qui te pousse à choisir.</p>
+        <a href="{% url 'parcours_list' %}" class="btn btn-primary btn-lg mt-3">Commencer le parcours</a>
+      </div>
+
+      <div class="text-center my-4">
+        <p class="lead">Deux approches, une même quête : comprendre ce qui guide tes décisions.</p>
+      </div>
+
+      <div class="bg-dark text-white py-5 text-center rounded">
+        <h2 class="display-5">Quel genre de personne es-tu face à un dilemme ?</h2>
+        <p class="lead">Nos choix révèlent qui nous sommes vraiment. Et si le bon choix n’était pas le plus juste ?</p>
+        <a href="{% url 'scenario_list' %}" class="btn btn-primary btn-lg mt-3">Explorer un dilemme</a>
+      </div>
+
+      <div class="mt-5">
+        <h3>Pourquoi ce simulateur ?</h3>
+        <p>
+          Parce que nos choix en disent long sur nos valeurs. Ce parcours te permet de te confronter à des situations complexes et de mieux comprendre ton propre raisonnement moral.
+        </p>
+      </div>
+
+      <blockquote class="blockquote text-center mt-4">
+        <p class="mb-0">“L’éthique commence là où les règles s’arrêtent.”</p>
+        <footer class="blockquote-footer">Simulateur Éthique</footer>
+      </blockquote>
+
+      <div class="text-center mt-5">
+        <h5>Prêt·e à te confronter à toi-même ?</h5>
+        <p class="lead">Chaque choix est une révélation. Le tien commence maintenant.</p>
+      </div>
     </div>
 
-    
+    <nav class="navbar fixed-bottom bg-primary text-white">
+      <div class="container text-center">
+        <span class="navbar-text w-100">© 2025 Simulateur Éthique</span>
+      </div>
+    </nav>
   </body>
-  <nav class="navbar fixed-bottom bg-primary text-white">
-    <div class="container text-center">
-      <span class="navbar-text w-100">© 2025 Simulateur Éthique</span>
-    </div>
-  </nav>
 </html>

@@ -4,6 +4,26 @@ Ce projet Django permet de simuler des dilemmes éthiques interactifs. L’utili
 
 ---
 
+Explorez vos valeurs à travers des choix complexes.
+
+## 🏠 Page d’accueil
+
+![Accueil](assets/Accueil.png)
+
+## 📚 Parcours disponibles
+
+![Parcours](assets/Parcours.png)
+![Parcours](assets/Resultat.png)
+
+## ⚖️ Scénarios éthiques
+
+![Scénarios](assets/Dilemmes.png)
+![Scénarios](assets/Result.png)
+
+
+
+
+
 ## 📦 Fonctionnalités
 
 - Liste de scénarios éthiques

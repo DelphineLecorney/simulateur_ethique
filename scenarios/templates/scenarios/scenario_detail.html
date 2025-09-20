@@ -11,6 +11,7 @@
   </head>
   <body class="bg-secondary text-white">
     <div class="container py-5">
+      <a href="{% url 'scenario_list' %}" class="btn btn-outline-light mt-3">← Retour aux dilemmes</a>
       <h1>{{ scenario.title }}</h1>
       <p>{{ scenario.description }}</p>
 
@@ -19,8 +20,7 @@
         <button type="submit" class="btn btn-success">Valider mon choix</button>
       </form>
 
-      <!-- <a href="/" class="btn btn-secondary mt-4">← Retour à la liste</a> -->
-      <a href="{% url 'scenarios' %}" class="btn btn-primary mt-4">← Retour à la liste</a>
+
     </div>
   </body>
   <nav class="navbar fixed-bottom bg-primary text-white">

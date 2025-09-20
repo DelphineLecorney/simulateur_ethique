@@ -12,6 +12,17 @@
   </head>
   <body class="bg-secondary text-white">
     <div class="container py-5">
+
+      
+      <div class="d-flex justify-content-center gap-3 mt-4">
+        <a href="{% url 'parcours_list' %}" class="btn btn-outline-light btn-lg"
+          >← Retour aux parcours</a
+        >
+        <a href="{% url 'home' %}" class="btn btn-primary btn-lg"
+          >Retour à l’accueil</a
+        >
+      </div>
+
       <h2 class="mb-4">Étape {{ step }} sur {{ total }}</h2>
 
       <h4>{{ scenario.title }}</h4>
