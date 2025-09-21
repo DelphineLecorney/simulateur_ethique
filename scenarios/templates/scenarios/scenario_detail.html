@@ -13,32 +13,36 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
   <body class="bg-secondary text-white">
     <div class="container py-5">
-
       <div class="d-flex justify-content-center gap-3 mb-4">
-        <a href="{% url 'home' %}" class="btn btn-outline-light btn-lg">← Accueil</a>
-        <a href="{% url 'scenario_list' %}" class="btn btn-outline-light btn-lg">← Liste des dilemmes</a>
+        <a href="{% url 'home' %}" class="btn btn-outline-light btn-lg"
+          >← Accueil</a
+        >
+        <a href="{% url 'scenario_list' %}" class="btn btn-outline-light btn-lg"
+          >← Liste des dilemmes</a
+        >
       </div>
 
-
-      <div class="card bg-light text-dark border-0 shadow-sm animate__animated animate__fadeInUp">
-        <div style="height: 6px; background-color: #0d6efd; border-radius: 4px 4px 0 0;"></div>
+      <div class="scenario-card animate__animated animate__fadeInUp">
+        <div class="card-top-bar"></div>
         <div class="card-body">
           <h2 class="card-title">{{ scenario.title }}</h2>
           <p class="card-text text-muted">{{ scenario.description }}</p>
 
-
           <form method="post" class="mt-4">
             {% csrf_token %}
             <div class="mb-3">{{ form.as_p }}</div>
-            <button type="submit" class="btn btn-success btn-lg">✅ Valider mon choix</button>
+            <button type="submit" class="btn btn-success btn-lg">
+              ✅ Valider mon choix
+            </button>
           </form>
         </div>
       </div>
     </div>
-
 
     <nav class="navbar fixed-bottom bg-primary text-white">
       <div class="container text-center">

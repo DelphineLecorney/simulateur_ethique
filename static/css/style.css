@@ -1,18 +1,11 @@
-.progress-circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff;
-  margin: 20px auto;
-}
-
-.progress-circle[data-score="75"] {
-background: conic-gradient(#0d6efd 75%, #e9ecef 0%);
+/* === Composant : Carte de scénario === */
+.scenario-card {
+  background-color: #f8f9fa;
+  color: #212529;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
 }
 
 .card-top-bar {
@@ -21,11 +14,40 @@ background: conic-gradient(#0d6efd 75%, #e9ecef 0%);
   border-radius: 4px 4px 0 0;
 }
 
-.card-title {
+.scenario-card .card-body {
+  padding: 1.5rem;
+}
+
+.scenario-card .card-title {
+  font-size: 1.25rem;
   font-weight: bold;
 }
 
-.card-text {
+.scenario-card .card-text {
   font-size: 1rem;
-  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* === Composant : Carte de parcours === */
+.parcours-card {
+  background-color: #f8f9fa;
+  color: #212529;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.parcours-card .card-body {
+  padding: 1.5rem;
+}
+
+.parcours-card .card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.parcours-card .card-text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }

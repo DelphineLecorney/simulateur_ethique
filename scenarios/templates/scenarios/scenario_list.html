@@ -13,17 +13,23 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
   <body class="bg-secondary text-white">
     <div class="container py-5">
       <h1 class="mb-4 text-center">🧠 Simulateur de Dilemmes Éthiques</h1>
       <div class="d-flex justify-content-center mb-4">
-        <a href="{% url 'home' %}" class="btn btn-outline-light btn-lg">← Retour à l’accueil</a>
+        <a href="{% url 'home' %}" class="btn btn-outline-light btn-lg"
+          >← Retour à l’accueil</a
+        >
       </div>
 
       {% for scenario in scenarios %}
-      <div class="card mb-5 bg-light text-dark border-0 shadow-sm animate__animated animate__fadeInUp">
-        <div style="height: 6px; background-color: #0d6efd; border-radius: 4px 4px 0 0;"></div>
+
+      <div class="scenario-card animate__animated animate__fadeInUp">
+        <div class="card-top-bar"></div>
+
         <div class="card-body">
           <h3 class="card-title">{{ scenario.title }}</h3>
           <p class="card-text text-muted">{{ scenario.description }}</p>
@@ -31,11 +37,15 @@
           <h6 class="mt-4">🧩 Choix possibles :</h6>
           <ul class="list-group mb-3">
             {% for choice in scenario.choices %}
-            <li class="list-group-item d-flex justify-content-between align-items-start">
+            <li
+              class="list-group-item d-flex justify-content-between align-items-start"
+            >
               <div class="ms-2 me-auto">
                 <div class="fw-bold">{{ choice }}</div>
                 {% if scenario.consequences %}
-                <small class="text-muted">{{ scenario.consequences|get_item:choice }}</small>
+                <small class="text-muted"
+                  >{{ scenario.consequences|get_item:choice }}</small
+                >
                 {% endif %}
               </div>
               {% if scenario.ethical_scores %}
@@ -47,7 +57,10 @@
             {% endfor %}
           </ul>
 
-          <a href="{% url 'scenario_detail' scenario.id %}" class="btn btn-primary">
+          <a
+            href="{% url 'scenario_detail' scenario.id %}"
+            class="btn btn-primary"
+          >
             Explorer ce dilemme
           </a>
         </div>
