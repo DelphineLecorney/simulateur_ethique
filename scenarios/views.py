@@ -151,5 +151,5 @@ def parcours_result(request):
         'average': average,
         'profile': profile,
         'description': description,
-        'total': len(scores)
+        'total': len(parcours_data['scenarios']),
     })
