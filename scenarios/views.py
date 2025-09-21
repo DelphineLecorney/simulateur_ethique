@@ -35,7 +35,6 @@ def scenario_detail(request, pk):
                 moral_zone = "🟠 Choix nuancé ou pragmatique"
             else:
                 moral_zone = "🟢 Choix altruiste ou responsable"
-
             
             return render(request, 'scenarios/result.html', {
                 'scenario': scenario,
@@ -67,22 +66,18 @@ def generate_gauge(score):
     ax.set_theta_offset(np.pi / 2)
     ax.set_theta_direction(-1)
 
-    # Définir les zones de couleur
     zones = [(0, 33, 'red'), (33, 66, 'orange'), (66, 100, 'green')]
     for start, end, color in zones:
         ax.barh(1, (end - start) * np.pi / 100, left=start * np.pi / 100, height=1, color=color, alpha=0.6)
 
-    # Dessiner l’aiguille
     angle = score * np.pi / 100
     ax.plot([angle, angle], [0, 1], color='black', linewidth=3)
-
-    # Nettoyer le cadran
+ 
     ax.set_yticklabels([])
     ax.set_xticklabels([])
     ax.set_ylim(0, 1.2)
     ax.set_title(f'Score éthique : {score}', fontsize=14)
 
-    # Convertir en image base64
     buffer = io.BytesIO()
     plt.savefig(buffer, format='png', bbox_inches='tight')
     buffer.seek(0)
