@@ -11,4 +11,6 @@ urlpatterns = [
     path('parcours/<int:parcours_id>/start/', views.parcours_start, name='parcours_start'),
     path('parcours/step/', views.parcours_step, name='parcours_step'),
     path('parcours/result/', views.parcours_result, name='parcours_result'),
+    path('parcours/reset/', views.reset_parcours, name='reset_parcours'),
+
 ]

@@ -25,7 +25,7 @@ def scenario_detail(request, pk):
             selected = form.cleaned_data['choice']
             scenario.selected_choice = selected
             scenario.save()
-            score = scenario.ethical_scores.get(selected)
+            score = scenario.ethical_scores.get(selected, 0)
             consequence = scenario.consequences.get(selected)
             graphic = generate_gauge(score)
 
@@ -61,6 +61,9 @@ def generate_gauge(score):
     import matplotlib.pyplot as plt
     import numpy as np
     import io, base64
+
+    if score is None:
+        score = 0
 
     fig, ax = plt.subplots(figsize=(5, 5), subplot_kw={'projection': 'polar'})
     ax.set_theta_offset(np.pi / 2)
@@ -153,3 +156,9 @@ def parcours_result(request):
         'description': description,
         'total': len(parcours_data['scenarios']),
     })
+
+
+def reset_parcours(request):
+    if 'parcours' in request.session:
+        del request.session['parcours']
+    return redirect('parcours_list')

@@ -22,12 +22,12 @@
       <h4 class="mt-4">🧭 Ton profil moral :</h4>
       <p class="mt-3">{{ description }}</p>
 
-      {% if profil == "Authentique" %}
+      {% if profile == "Authentique" %}
       <div class="alert alert-success fs-4">
         🟢 Authentique<br />
         <small>Tu es guidée par des principes forts et constants.</small>
       </div>
-      {% elif profil == "Ambivalent" %}
+      {% elif profile == "Ambivalent" %}
       <div class="alert alert-warning fs-4">
         🟡 Ambivalente<br />
         <small
@@ -47,6 +47,13 @@
       <a href="{% url 'home' %}" class="btn btn-primary mt-3"
         >Retour à l’accueil</a
       >
+      <a
+        href="{% url 'reset_parcours' %}"
+        class="btn btn-outline-light mt-3"
+        onclick="return confirm('Es-tu sûr de vouloir recommencer le parcours ?')"
+      >
+        🔁 Recommencer le parcours
+      </a>
     </div>
   </body>
   <nav class="navbar fixed-bottom bg-primary text-white">

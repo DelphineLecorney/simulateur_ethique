@@ -13,15 +13,6 @@
       <h1>Tu as choisi : {{ choice }}</h1>
       <p><strong>Conséquence :</strong> {{ consequence }}</p>
       <p><strong>Score éthique :</strong> {{ score }}</p>
-
-      <div class="d-flex justify-content-center gap-3 mb-4">
-        <a href="{% url 'home' %}" class="btn btn-outline-light btn-lg"
-          >← Accueil</a
-        >
-        <a href="{% url 'scenario_list' %}" class="btn btn-outline-light btn-lg"
-          >← Liste des dilemmes</a
-        >
-      </div>
     </div>
 
     <div class="d-flex justify-content-center mb-4">
@@ -36,15 +27,23 @@
       </div>
     </div>
 
-<div class="mt-4">
-  <h5 class="text-center">Légende :</h5>
-  <ul class="list-unstyled text-start mx-auto" style="max-width: 350px;">
-    
-    <li>🔴 0–33 : Choix égoïste ou risqué</li>
-    <li>🟠 34–66 : Choix nuancé ou pragmatique</li>
-    <li>🟢 67–100 : Choix altruiste ou responsable</li>
-  </ul>
-</div>
+    <div class="mt-4">
+      <h5 class="text-center">Légende :</h5>
+      <ul class="list-unstyled text-start mx-auto" style="max-width: 350px">
+        <li>🔴 0–33 : Choix égoïste ou risqué</li>
+        <li>🟠 34–66 : Choix nuancé ou pragmatique</li>
+        <li>🟢 67–100 : Choix altruiste ou responsable</li>
+      </ul>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3 mb-4">
+      <a href="{% url 'home' %}" class="btn btn-outline-light btn-lg"
+        >← Accueil</a
+      >
+      <a href="{% url 'scenario_list' %}" class="btn btn-outline-light btn-lg"
+        >← Retour à la liste des dilemmes</a
+      >
+    </div>
   </body>
 
   <nav class="navbar fixed-bottom bg-primary text-white">
